@@ -22,7 +22,8 @@ INSERT INTO instructors VALUES ('1224345','Tommy','Allen'),
 CREATE TABLE courses (
   course_id VARCHAR(30) NOT NULL PRIMARY KEY,
   course_name VARCHAR(60) NOT NULL,
-  instructor_id VARCHAR(60) NOT NULL
+  instructor_id VARCHAR(60) NOT NULL,
+  credits INTEGER
 );
 
 INSERT INTO courses VALUES ('CS110','Intro to Computers','1224345'),
