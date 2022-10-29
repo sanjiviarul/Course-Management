@@ -109,7 +109,7 @@ app.get("/Studentdashboard/:id", async(req,res)=>{
 })
 app.get("/Registeredstudents/:id", async(req,res)=>{
     try { 
-        const results= await db.query("select students.student_id,students.first_name,students.last_name,students.email,courses.course_name,courses.course_id from grade INNER JOIN courses ON courses.course_id = grade.course_id INNER JOIN enroll ON courses.course_id = enroll.course_id INNER JOIN students ON students.student_id = grade.student_id where instructor_id=$1 GROUP BY (students.student_id,courses.course_name,courses.course_id)",[req.params.id]);
+        const results= await db.query("select students.student_id,students.first_name,students.last_name,students.email,courses.course_name,courses.course_id, courses.credits from grade INNER JOIN courses ON courses.course_id = grade.course_id INNER JOIN enroll ON courses.course_id = enroll.course_id INNER JOIN students ON students.student_id = grade.student_id where instructor_id=$1 GROUP BY (students.student_id,courses.course_name,courses.course_id)",[req.params.id]);
         console.log(results.rows[0]);
         res.status(200).json({
             status: "success",
@@ -126,7 +126,7 @@ app.get("/Registeredstudents/:id", async(req,res)=>{
 app.get("/Instructordashboard/:id", async(req,res)=>{
     try { 
         const instructorInfo= await db.query("select instructor_id, first_name, last_name from instructors where instructor_id =$1",[req.params.id]);
-        const studentGrades= await db.query("select students.student_id,students.first_name,students.last_name,grade.course_id,courses.course_name, grade.value from grade INNER JOIN courses ON courses.course_id = grade.course_id INNER JOIN enroll ON courses.course_id = enroll.course_id INNER JOIN students ON students.student_id = grade.student_id where instructor_id=$1 GROUP BY(students.student_id,grade.course_id,courses.course_name,grade.value)",[req.params.id]);
+        const studentGrades= await db.query("select students.student_id,students.first_name,students.last_name,grade.course_id,courses.course_name,courses.credits, grade.value from grade INNER JOIN courses ON courses.course_id = grade.course_id INNER JOIN enroll ON courses.course_id = enroll.course_id INNER JOIN students ON students.student_id = grade.student_id where instructor_id=$1 GROUP BY(students.student_id,grade.course_id,courses.course_name,grade.value,courses.credits)",[req.params.id]);
         console.log(instructorInfo.rows[0]);
         console.log(studentGrades.rows[0]);
         res.status(200).json({
