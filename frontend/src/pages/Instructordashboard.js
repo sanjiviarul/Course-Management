@@ -65,6 +65,7 @@ export default function Instructordashboard() {
               <th scope="col">Course ID</th>
               <th scope="col">Course Name</th>
               <th scope="col">Current Grade</th>
+              <th scope="col">Credits</th>
               <th style={{ "textAlign": "center" }} scope="col">Edit Grade</th>
 
             </tr>
@@ -78,7 +79,9 @@ export default function Instructordashboard() {
               <td>{g.last_name}</td>
               <td>{g.course_id}</td>
               <td>{g.course_name}</td>
+              
               <td style={{ "textAlign": "center" }}>{g.value}</td>
+              <td>{g.credits}</td>
               <td style={{ "textAlign": "center" }}>
                 <form className="m-1">
                   

@@ -56,6 +56,7 @@ export default function Studentdashboard() {
               <th scope="col">Course ID</th>
               <th scope="col">Course Name</th>
               <th scope="col">Grade</th>
+              <th scope="col">Credits</th>
             </tr>
           </thead>
           <tbody>
@@ -64,6 +65,7 @@ export default function Studentdashboard() {
                 <td>{course.course_id}</td>
                 <td>{course.course_name}</td>
                 <td>{course.value}</td>
+                <td>{course.credits}</td>
               </tr>)
            })}
           </tbody>
