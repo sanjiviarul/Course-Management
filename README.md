@@ -11,3 +11,5 @@ operable program or batch file.
 https://bobbyhadz.com/blog/not-recognized-as-internal-or-external-command-react-scripts#:~:text=To%20solve%20the%20error%20%22react,your%20npm%20cache%20if%20necessary.&text=Copied!
 
 # added a column 'credits' to table courses and added  to the setupdatabase.sql file
+
+# This app uses postgresql in GCP, database UMS, user postgres
