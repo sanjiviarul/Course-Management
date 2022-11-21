@@ -34,7 +34,7 @@ function App() {
               <div id="myDropdown" className="dropdown-content">
                 <Link to="/">Student Portal</Link>
                 <Link to="/Instructorportal">Instructor Portal</Link>
-                <a href="http://lakhsolutions.co.in/" target="_blank">Portfolio Website</a>
+                <a href="https://intranet.ahead.amrita.edu" target="_blank">Amrita AHEAD Intranet</a>
               </div>
             </div>
 

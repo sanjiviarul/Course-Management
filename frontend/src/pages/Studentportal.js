@@ -11,7 +11,7 @@ export default function Studentportal() {
 
   return (
     
-    <div className='centerelements'><h1><br /><br />LAKH University<br />Student Portal</h1>
+    <div className='centerelements'><h1><br /><br />AMRITA University<br />Student Portal</h1>
       <div className="mt-5" >
         
         <nav>
